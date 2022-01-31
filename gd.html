@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="Description" content="Good deal property dealers">
+    <meta name="Keywords"
+        content="good deal, good deal property dealers, property, real estate, Real Estate, REAL ESTATE, Real estate, kharghar, Kharghar, KHARGHAR, Good deal, GOOD DEAL, Good deal, real estate kharghar, Real estate kharghar, agent, web, web development, html">
+    <meta name="Robots" content="INDEX, FOLLOW">
+
+    <title>Good Deal Property Dealers</title>
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <style>
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .popup {
+            background-color: #e6e6e6;
+            /* background: url(img/pattern.png);
+            background-size: contain; */
+            width: 448px;
+            padding: 30px 40px;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 28%;
+            border-radius: 5px;
+            font-family: 'Noto Sans', sans-serif;
+            display: none;
+            text-align: center;
+        }
+
+        .popup button {
+            display: block;
+            margin: 0 0 20px auto;
+            background-color: transparent;
+            font-size: 30px;
+            color: #c5c5c5;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .popup p {
+            font-size: 14px;
+            text-align: justify;
+            margin: 20px 0;
+            line-height: 25px;
+        }
+
+        /* a{
+    display: block;
+    width: 150px;
+    position: relative;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #0f72e5;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 0;
+} */
+        .mySlides {
+
+            filter: invert(0%);
+            margin-top: -97%;
+        }
+
+        .mySlides img {
+            min-width: 3%;
+            max-width: 63%;
+            filter: invert(0%);
+            margin-left: 18%;
+        }
+
+        .prev {
+            margin-left: 18%;
+            font-size: 29px;
+            width: 31%;
+        }
+
+        .prev:hover {
+            cursor: pointer;
+        }
+
+        .next {
+            font-size: 29px;
+            width: 31%;
+        }
+
+        .next:hover {
+            cursor: pointer;
+        }
+
+        body {
+            font-family: 'Baloo Bhai 2', cursive;
+            color: black;
+            margin: 0px;
+            padding: 0px;
+
+            min-width: 790px;
+            min-height: fit-content;
+
+        }
+
+        .left img {
+            width: 90px;
+            margin-left: 580px;
+            filter: invert(100%);
+        }
+
+
+
+        .prop img {
+            width: 25px;
+            margin-left: 12%;
+            margin-top: 10%;
+            filter: invert(100%);
+        }
+
+        .prop {
+            position: absolute;
+            top: 3%;
+            left: 15%;
+            min-width: 6px;
+            min-height: fit-content;
+            transform: translate(-50%, -50%);
+            padding: 12px 76px;
+            color: #fff;
+            background: linear-gradient(to right, #959191 0, #fff 10%, #ffffff 20%);
+            background-position: 0;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s infinite linear;
+            animation-fill-mode: forwards;
+            -webkit-text-size-adjust: none;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .btn-shine {
+            position: absolute;
+            top: 4%;
+            left: 123%;
+            transform: translate(-50%, -50%);
+            padding: 12px 48px;
+            color: #fff;
+            background: linear-gradient(to right, #959191 0, #fff 10%, #ffffff 20%);
+            background-position: 0;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s infinite linear;
+            animation-fill-mode: forwards;
+            -webkit-text-size-adjust: none;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        @-moz-keyframes shine {
+            0% {
+                background-position: 0;
+            }
+
+            60% {
+                background-position: 180px;
+            }
+
+            100% {
+                background-position: 260px;
+            }
+        }
+
+        @-webkit-keyframes shine {
+            0% {
+                background-position: 0;
+            }
+
+            60% {
+                background-position: 180px;
+            }
+
+            100% {
+                background-position: 260px;
+            }
+        }
+
+        @-o-keyframes shine {
+            0% {
+                background-position: 0;
+            }
+
+            60% {
+                background-position: 180px;
+            }
+
+            100% {
+                background-position: 260px;
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                background-position: 0;
+            }
+
+            60% {
+                background-position: 180px;
+            }
+
+            100% {
+                background-position: 260px;
+            }
+        }
+
+        .right {
+            /* border: 2px solid blue; */
+            display: inline-block;
+            min-width: 20px;
+            min-height: fit-content;
+            position: absolute;
+            right: 23px;
+            top: 414px;
+        }
+
+        @keyframes flicker {
+            0% {
+                text-shadow: 0 0 5px #0fd35a, 0 0 10px #63bde7, 0 0 20px #32c5dd, 0 0 40px #00dcff;
+            }
+
+            100% {
+                text-shadow: 0 0 5px #01b56d, 0 0 10px #01b56d, 0 0 20px #01b56d, 0 0 40px #01b56d;
+            }
+        }
+
+        .build {
+            color: white;
+            position: absolute;
+            top: 34.80%;
+            left: 32px;
+            min-width: 20px;
+            min-height: fit-content;
+            filter: invert(0%);
+        }
+
+        .build img {
+            /* min-width: 200px; */
+            /* min-height: fit-content; */
+            width: 58%;
+            filter: invert(0%);
+            /* display: block; */
+            opacity: 85%;
+            width: fit-content;
+            position: fixed;
+            margin-top: -581%;
+            visibility: hidden;
+        }
+
+        .flick {
+            animation: flicker 1s ease-in-out infinite alternate;
+            color: white;
+            position: absolute;
+            top: 76%;
+            letter-spacing: 6px;
+            font-size: 45px;
+            left: 28%;
+            filter: invert(0%);
+        }
+
+        .btn {
+            font-family: 'Baloo Bhai 2', cursive;
+            margin: 108px 0px 0px 22px;
+            background-color: #fdfdfd;
+            color: rgb(0 0 0);
+            padding: 7px 13px;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            min-width: 10px;
+            min-height: fit-content;
+        }
+
+        .btn:hover {
+            background-color: rgb(138, 138, 138);
+        }
+
+        .material-icons {
+            size: 10%;
+        }
+
+        @-webkit-keyframes rotate {
+            100% {
+                transform: rotate(1turn);
+            }
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(1turn);
+            }
+        }
+
+        .container {
+            /* width: 400px; */
+            position: relative;
+            z-index: 0;
+            font-size: 30px;
+            height: 480px;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 2rem;
+            display: inline-block;
+            position: absolute;
+            top:1918px;
+            left: 4%;
+            width: 590px;
+            padding: 20px;
+            margin-top: 755px;
+            min-width: 200px;
+            min-height: fit-content;
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: -50%;
+            top: -50%;
+            width: 200%;
+            height: 200%;
+            background-color: #399953;
+            background-repeat: no-repeat;
+            background-size: 50% 50%, 50% 50%;
+            background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+            background-image: linear-gradient(#88d8b0, #39d9b8), linear-gradient(#dc92ed, #d53ef7), linear-gradient(#88d8b0, #39d9b8), linear-gradient(#dc92ed, #d53ef7);
+            -webkit-animation: rotate 4s linear infinite;
+            animation: rotate 4s linear infinite;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%
+        }
+
+        .container::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 6px;
+            top: 6px;
+            width: calc(100% - 12px);
+            height: calc(100% - 12px);
+            background: white;
+            border-radius: 5px;
+        }
+
+        .formbtn {
+            font-family: 'Baloo Bhai 2', cursive;
+            margin: 36px -120px 0px 0px;
+            background-color: white;
+            color: rgb(0, 0, 0);
+            padding: 5px 14px;
+            margin-left: 27%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .formbtn:hover {
+            background-color: rgb(204, 204, 204);
+        }
+
+        .form_grp input {
+            text-align: center;
+            padding: auto;
+            margin: 15px;
+            width: 261px;
+            margin-left: 150px;
+            height: 30px;
+            border-radius: 2px;
+            border-color: rgb(218 127 239);
+        }
+
+
+
+        /* The animation code */
+        @keyframes example {
+            100% {
+                background-color: rgb(84, 238, 84);
+            }
+        }
+
+        .border {
+            padding: 5px;
+            background: linear-gradient(110deg, #d53ef7 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #c8e7e5 34%, #39d9b8 34%);
+            background-size: 400% 400%;
+            height: 440px;
+            background-position: 25% 50%;
+            -webkit-animation: Gradient 15s ease infinite;
+            -moz-animation: Gradient 5s ease infinite;
+        }
+
+        .inner-cutout {
+            padding: 40px 0px;
+            display: block;
+            /* background: url(img/lines.jpg); */
+            background-color: #5d5f5f;
+            /*#ff6f69*/
+            margin: 2%;
+            padding-bottom: 40px;
+            min-width: 480px;
+            min-height: fit-content;
+            height: 300px;
+            background: radial-gradient(#a7a6bb, #3c32a5);
+            background-size: 300%;
+            background-position: 50% 50%;
+        }
+
+        .knockout {
+
+            vertical-align: middle;
+            text-align: center;
+            margin: auto;
+            font-family: 'Great Vibes', cursive;
+            font-size: 50pt;
+            color: rgb(192, 192, 192);
+            /*#ffeead*/
+            color: #fff;
+            background: linear-gradient(110deg, #ffffff 33%, rgba(246, 248, 218, 0) 33%), linear-gradient(110deg, #C5E7D7 34%, #88d8b0 34%);
+            background-size: 400%;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }
+
+        .knockout {
+            animation: Gradient 5s ease infinite;
+            -webkit-animation: Gradient 15s ease infinite;
+            -moz-animation: Gradient 5s ease infinite;
+        }
+
+        @-webkit-keyframes Gradient {
+            0% {
+                background-position: 30% 50%
+            }
+
+            50% {
+                background-position: 25% 50%
+            }
+
+            100% {
+                background-position: 30% 50%
+            }
+
+        }
+
+        .spr {
+            font-weight: 500;
+            font-size: 44px;
+            text-transform: uppercase;
+            letter-spacing: 7px;
+            text-align: center;
+            margin: 70px;
+        }
+
+        .spr .word {
+            display: inline-block;
+            line-height: 1em;
+        }
+
+        /* .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #2fe38e;
+        } */
+
+        /* Add a hover effect if you want */
+        .fa:hover {
+            opacity: 0.6;
+        }
+
+        .fa {
+            /* display: inline-block; */
+            padding: 20px;
+            width: 50px;
+            text-decoration: none;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: 20px;
+            text-rendering: auto;
+            margin: 23px -2px 0px;
+            -webkit-font-smoothing: antialiased;
+            padding-right: 35px;
+            padding-left: 75px;
+            /* -moz-osx-font-smoothing: grayscale; */
+        }
+
+        /* Facebook */
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-youtube {
+            background: #bb0000;
+            color: white;
+        }
+
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-instagram {
+            background: #D93D76;
+            color: white;
+        }
+
+        .fa-linkedin {
+            background: #007bb5;
+            color: white;
+        }
+
+        #about_head {
+            /* width: fit-content; */
+            border: 2px solid white;
+            text-align: center;
+            min-height: fit-content;
+            min-width: 170px;
+            background-color: #39d9b8;
+            margin: 195px 500px 0px 500px;
+            animation: border 2s infinite;
+            border-radius: 13px;
+        }
+
+        #contact_head {
+    border: 2px solid white;
+    margin: 2169px 194px 0px 420px;
+    text-align: center;
+    background-color: #39d9b8;
+    animation: border 2s infinite;
+    border-radius: 13px;
+}
+        /* #project_head{
+            border: 2px solid white;
+            margin: 1200px 450px 0px 450px;
+            text-align: center;
+            background-color:#88D8B0;
+            animation: border 3s infinite;
+            border-radius: 13px;
+        } */
+
+        #channel_head {
+            border: 2px solid white;
+            margin: 10px 0px 0px 0px;
+            text-align: center;
+            background-color: #39d9b8;
+            animation: border 2s infinite;
+            border-radius: 1px;
+            width: 140%;
+    overflow: hidden;
+        }
+
+        @keyframes border {
+            50% {
+                /* border-color: #000000; */
+                color: #ffffff;
+                background-color: #e574ff;
+            }
+        }
+
+        .main {
+            width: 98%;
+            border: 3px solid rgb(0, 0, 0);
+            margin: 3px auto;
+            background: url(img/bg2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .container2 {
+            /* border: 3px solid rgb(211, 56, 56); */
+            margin: 12px 3px;
+            padding: 12px 3px;
+        }
+
+        #first {
+            float: left;
+            width: 49%;
+            color: #dff4fa;
+        }
+
+        #second {
+            /* border: 2px solid red; */
+            color: #dff4fa;
+            float: right;
+            width: 40%;
+            animation: example1 12s infinite alternate;
+
+        }
+
+        #second img {
+            filter: invert(0%);
+            margin-left: 2%;
+            width: 326px;
+            visibility: hidden;
+        }
+
+        /* #second {
+            margin-top: 33px;
+            position: relative;
+        } */
+
+        /* #second img {
+            animation: animA 4s infinite alternate;
+        } */
+
+
+        @keyframes example1 {
+            0% {
+                background: url(img/award.jpg);
+                background-size: cover;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            30% {
+                background: url(img/officeworking.jpeg);
+                background-size: cover;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            50% {
+                background: url(img/office.jpeg);
+                background-size: cover;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            100% {
+                background: url(img/interview.jpeg);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        #third {
+            color: #dff4fa;
+            clear: both;
+            width: 49%;
+        }
+
+        #fourth {
+            color: #dff4fa;
+            float: right;
+            width: 40%;
+            margin-top: -21%;
+        }
+
+        #fourth img {
+            filter: invert(0%);
+            margin-left: 13%;
+            width: 232px;
+            margin-top: -8%;
+            animation: example2 2s infinite;
+        }
+
+        @keyframes example2 {
+            20% {
+                opacity: .5;
+            }
+        }
+
+        div .ex {
+            position: relative;
+            background-color: #91f8d9;
+            margin-top: 705px;
+            padding: 480px 0px 100px 0px;
+            animation-name: example;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+
+        div .ex:hover {
+            opacity: 95%;
+        }
+
+        @keyframes example {
+            0% {
+                background: url('para2.jpg');
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            50% {
+                background: url('p1.jpg');
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            100% {
+                background: url('arihant1.jpg');
+                background-repeat: no-repeat;
+                background-position: center;
+
+            }
+        }
+
+        .gd {
+            text-align: center;
+            width: 100%;
+        }
+
+        #navlist {
+            min-width: 1025px;
+            overflow: hidden;
+            background-color: #4b448d;
+            width: 1357px;
+            margin: 3% 0% 0% -1%;
+            position: sticky;
+        }
+
+        .navlogo img {
+            width: 40px;
+            margin-left: 3%;
+            filter: invert(100%);
+        }
+
+        #navlist a {
+
+            float: left;
+            display: block;
+            color: #ffffff;
+            padding: 23px 48px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #navlist a:hover {
+            background-color: rgb(201, 196, 196);
+            color: black;
+        }
+
+        #navlist b {
+            margin-top: 4px;
+            padding: 8px 12px;
+            color: lime;
+            float: left;
+            font-size: 22px;
+        }
+
+        /* scroll portion design */
+        .scrollable b {
+            font-family: 'Special Elite', cursive;
+            font-size: 28px;
+        }
+
+        .content {
+            padding: 16px;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        #btn-back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #39d9b8;
+            border-radius: 12px;
+            border-color: rgb(213 62 247);
+        }
+
+        #btn-back-to-top:hover {
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        #newlogo {
+            width: 19%;
+            margin-top: -68%;
+            margin-bottom: -28%;
+            filter: invert(0);
+        }
+
+        .newlogo {
+            margin-left: 42%;
+            width: 60%;
+        }
+
+        #maharera {
+            display: contents;
+            background: none;
+        }
+
+        #maharera:hover {
+            cursor: pointer;
+        }
+
+        #rera {
+            width: 130%;
+            margin-top: 102%;
+            margin-left: 95%;
+            position: sticky;
+        }
+
+        /* #pattern{
+            opacity: 90%;
+        } */
+
+        #lakhanilogo {
+            width: 13%;
+        }
+
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            left: 8px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .my-float {
+            margin-top: -4px;
+            margin-left: -172%;
+        }
+
+        .fa-whatsapp:before {
+            content: "\f232";
+            margin-left: 85%;
+        }
+
+        .popbtn {
+            margin-left: 0%;
+            padding: 1%;
+            border-radius: 7px;
+        }
+
+        .sale {
+            width: 10%;
+        }
+
+        /* _______________________________________________________________________________- */
+        @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+        /* body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif !important;
+    } */
+
+        section {
+            width: 100%;
+            height: 100vh;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 140px 0;
+        }
+
+        .card {
+            position: relative;
+            max-width: 212px;
+            height: auto;
+            background: linear-gradient(-45deg, #fe0847, #feae3f);
+            border-radius: 15px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            -webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, .1);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, .1);
+            -webkit-transition: .5s;
+            transition: .5s;
+        }
+
+        .card:hover {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+
+        .col-sm-4:nth-child(1) .card,
+        .col-sm-4:nth-child(1) .card .title .fa {
+            background: linear-gradient(-45deg, #f403d1, #64b5f6);
+
+        }
+
+        .col-sm-4:nth-child(2) .card,
+        .col-sm-4:nth-child(2) .card .title .fa {
+            background: linear-gradient(-45deg, #ffec61, #f321d7);
+
+        }
+
+        .col-sm-4:nth-child(3) .card,
+        .col-sm-4:nth-child(3) .card .title .fa {
+            background: linear-gradient(-45deg, #24ff72, #9a4eff);
+
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            visibility: hidden;
+            width: 100%;
+            height: 40%;
+            background: rgba(255, 255, 255, .1);
+            z-index: 1;
+            -webkit-transform: skewY(-5deg) scale(1.5);
+            transform: skewY(-5deg) scale(1.5);
+        }
+
+        .title .fa {
+            color: #fff;
+            font-size: 60px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+            -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
+            box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
+
+        }
+
+        .title h2 {
+            position: relative;
+            margin: 20px 0 0;
+            padding: 0;
+            color: #fff;
+            font-size: 28px;
+            z-index: 2;
+        }
+
+        .price,
+        .option {
+            position: relative;
+            z-index: 2;
+        }
+
+        .price h4 {
+            margin: 0;
+            padding: 20px 0;
+            color: #fff;
+            font-size: 30px;
+        }
+
+        .option ul {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .option ul li {
+            margin: 0 0 10px;
+            padding: 0;
+            list-style: none;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .card a {
+            position: relative;
+            z-index: 2;
+            background: #fff;
+            color: black;
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 40px;
+            display: block;
+            text-align: center;
+            margin: 20px auto 0;
+            font-size: 16px;
+            cursor: pointer;
+            -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+
+        }
+
+        .card a:hover {
+            text-decoration: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Neonderthaw&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+
+<body>
+
+
+    <header class="header" style="width: fit-content;"> <a id="button"></a>
+        <div class="btn-shine" target="_blank">MAHA RERA No.: A52000000368</div>
+        <!-- left box for logo -->
+        <div class="left" id="home">
+            <div class="border">
+                <div class="inner-cutout" id="pattern">
+                    <img src="img/logopng1.png" alt="logo">
+                    <!-- <div class="newlogo">
+                        <img src="img/logo2.png" id="newlogo" alt="">
+                    </div> -->
+                    <h3 class="knockout" style="font-family: 'Noto Sans', sans-serif; font-size: 45px;">GOOD DEAL
+                        PROPERTY DEALER
+                        <br><span style="font-size: 30px; font-family: 'Yellowtail', cursive;">"Your Dreams, Our
+                            Efforts"</span>
+                    </h3>
+                    <h2 id="trademark" style="float: right; margin-right: 21.8%; margin-top: -10%;">™</h2>
+                </div>
+
+                <div id="navlist">
+                    <b class="navlogo"><img src="img/logopng1.png" alt=""></b>
+                    <a href="#home">Home</a>
+                    <a href="#about_head">About us</a>
+                    <a href="prop.html">Available Properties</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact_head">Contact us</a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gooddealpropertys@gmail.com" target="_blank"
+                        style="text-decoration: none;">Email Us</a>
+                    <!-- <a href="https://g.page/good-deal-property?share" target="_blank">Locate Us</a> -->
+                    <a href="#channel_head">Channel Partners</a>
+                </div>
+
+
+                <h2 id="about_head">ABOUT US</h2>
+
+
+                <!-- <div class="ex" id="projects"> -->
+
+                <div class="main">
+                    <div id="first" class="container2">
+                        <h2 style="font-family: 'Hind', sans-serif;">EXPERIENCE IN THIS FIELD</h2>
+                        <p>We have been in Real Estate Business SINCE 2008.
+                        </p><br>
+                        <h2 style="font-family: 'Hind', sans-serif;">WHERE WE DEAL?</h2>
+                        <p>We deal mainly in KHARGHAR, TALOJA, PANVEL & RASAYANI
+                        </p>
+                    </div>
+
+                    <div id="second" class="container2">
+                        <img src="img/award.jpg" alt="">
+                    </div>
+                    <div id="third" class="container2">
+                        <h2 style="font-family: 'Hind', sans-serif;">WHY US?</h2>
+                        <p>
+                        <ul>
+                            <li>Providing great service to you</li>
+                            <li>Offering great deals</li>
+                            <li>Working according to your requirements</li>
+                            <li>Systematic manner of working</li>
+                            <li>Maintain a healthy & long relationship with you</li>
+                            <li>Giving no chance of complaint</li>
+                            <li>Always being there for you</li>
+                        </ul>
+                        </p>
+                    </div>
+                    <div id="fourth" class="container2">
+                        <section>
+                            <div class="container-fluid" style="  margin-top: -5%;">
+                                <div class="prop_container">
+                                    <div class="row">
+                                        <div class="col-sm-4" style="margin-left: -42%; margin-top: -31%; width: 38%;">
+                                            <div class="card text-center">
+                                                <div class="title">
+                                                    <img src="img/logopng1.png" alt=""
+                                                        style="width: 28%; filter: invert(1);">
+                                                    <!-- <i class="fa fa-paper-plane" aria-hidden="true"></i> -->
+                                                    <h2 style="color: black; font-weight: 900;">SALE</h2>
+                                                </div>
+
+                                                <a href="prop.html">See Properties</a>
+                                            </div>
+                                        </div>
+                                        <!-- END Col one -->
+                                        <!-- ==================================================================================================== -->
+                                        <div class="col-sm-4" style="margin-left: 4%;width: 38%;margin-top: -47%;">
+                                            <div class="card text-center">
+                                                <div class="title">
+                                                    <!-- <i class="fa fa-plane" aria-hidden="true"></i> -->
+                                                    <img src="img/logopng1.png" alt=""
+                                                        style="width: 28%; filter: invert(1);">
+
+                                                    <h2 style="color: black; font-weight: 900;">PURCHASE</h2>
+                                                </div>
+
+                                                <a href="prop.html">See Properties</a>
+                                            </div>
+                                        </div>
+                                        <!-- END Col two -->
+                                        <!-- ==================================================================================================== -->
+
+                                        <div class="col-sm-4" style="margin-left: 49%;width: 38%;margin-top: -47%;">
+                                            <div class="card text-center">
+                                                <div class="title">
+                                                    <!-- <i class="fa fa-rocket" aria-hidden="true"></i> -->
+                                                    <img src="img/logopng1.png" alt=""
+                                                        style="width: 28%; filter: invert(1);">
+
+                                                    <h2 style="color: black; font-weight: 900;">RENT</h2>
+                                                </div>
+                                                <a href="prop.html">See Properties</a>
+
+                                            </div>
+                                        </div>
+                                        <!-- END Col three -->
+                                        <!-- ==================================================================================================== -->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- <button id="sale">
+                            SALE
+                        </button ><br>
+                        <button id="purchase">
+                            PURCHASE
+                        </button><br>
+                        <button id="rent">
+                            RENT
+                        </button> -->
+                    </div>
+
+
+                </div>
+
+
+    </header>
+
+    <h2 id="contact_head">CONTACT US</h2>
+    <div class="container" id="contact">
+        <img src="img/logo2.png" alt="" style="width: 15%; margin-left: 1%;">
+        <p style="margin-left: 130px; margin-top: -12%;">BOOK AN APPOINTMENT</p>
+        <p style=" font-size: 13px; color: red; margin-left: 180px;">Fields marked with * are mandatory</p>
+
+
+        <form action="https://sheetdb.io/api/v1/t4zwk5a7hjp27" method="POST" id="sheetdb-form">
+            <div class="form_grp">
+                <input type="text" name="data[name]" placeholder="Enter your Name*" required>
+            </div>
+            <div class="form_grp">
+                <input type="text" name="data[contact]" placeholder="Enter your contact number*" required>
+            </div>
+            <div class="form_grp">
+                <input type="email" name="data[email]" placeholder="Enter your Email Id">
+            </div>
+            <div class="form_grp">
+                <label for="reqirement" style="font-size: 16px; margin-left: 18%;">Select your requirement
+                    <select name="myReq" id="reqirement" style="padding: 1%; margin-left: 1%;">
+                        <option value="None" selected>None</option>
+                        <option value="flatSell">Sell a flat</option>
+                        <option value="flatRent">Rent a flat</option>
+                        <option value="flatPurchase">Purchase a flat</option>
+                        <option value="shopSell">Sell a shop</option>
+                        <option value="shopRent">Rent a shop</option>
+                        <option value="shopPurchase">Purchase a shop</option>
+                        <option value="shopPurchase">Under Construction Projects</option>
+                        <option value="shopPurchase">Residential Projects</option>
+                        <option value="shopPurchase">Commericial Projects</option>
+                        <option value="shopPurchase">Pre Launch Projects</option>
+                        <option value="shopPurchase">Investor Propertys</option>
+                        <option value="shopPurchase">Bungalow Plots</option>
+                        <option value="shopPurchase">Ready Bungalow</option>
+                        <option value="Other" selected>Other</option>
+                    </select>
+                </label>
+            </div>
+            <input type="submit" value="Submit Form" class="formbtn">
+            <input type="reset" value="Reset" class="formbtn">
+    </div>
+    </form>
+
+
+    <div class="mySlides" id="projects">
+        <!-- <video width="600" controls style="    margin-top: -40%;
+        margin-left: 28%;">
+            <source src="img/paradisevideo.mp4" type="video/mp4"> -->
+
+
+            <img src="img/p1.jpg" style="width:100%">
+            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black"
+                style="text-align: center;font-size: 22px;">
+                SAI WORLD EMPIRE (KHARGHAR)
+            </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="img/para2.jpg" style="width:100%">
+        <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black"
+            style="text-align: center;font-size: 22px;">
+            SAI WORLD EMPIRE (KHARGHAR)
+        </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="img/adhiraj.jpg" style="width:100%">
+        <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black"
+            style="text-align: center;font-size: 22px;">
+            ADHIRAJ
+        </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="img/aalishan.jpg" style="width:100%">
+        <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black"
+            style="text-align: center; font-size: 22px;">
+            ARIHANT AALISHAAN (KHARGHAR)
+        </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="img/emperia.jpg" style="width:100%">
+        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black"
+            style="text-align: center;font-size: 22px;">
+            AKSHAR EMPERIA GARDEN (RASAYANI)
+        </div>
+    </div>
+    <div class="mySlides">
+        <img src="img/emperia1.jpeg" style="width:100%">
+        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black"
+            style="text-align: center;font-size: 22px;">
+            AKSHAR EMPERIA GARDEN (RASAYANI)
+        </div>
+    </div>
+    <div class="mySlides">
+        <img src="img/emperia2.jpeg" style="width:100%">
+        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black"
+            style="text-align: center;font-size: 22px;">
+            AKSHAR EMPERIA GARDEN (RASAYANI)
+        </div>
+    </div>
+    <div class="mySlides">
+        <img src="img/emperiaTownship.jpeg" style="width:100%">
+        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black"
+            style="text-align: center;font-size: 22px;">
+            EMPERIA TOWNSHIP
+        </div>
+    </div>
+    <div class="mySlides">
+        <img src="img/24high.jpeg" style="width:100%">
+        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black"
+            style="text-align: center;font-size: 22px;">
+            24 HIGH
+        </div>
+    </div>
+    <div class="mySlides">
+        <img src="img/24high1.jpg" style="width:100%">
+        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black"
+            style="text-align: center;font-size: 22px;">
+            24 HIGH
+        </div>
+    </div>
+    <div class="mySlides">
+        <img src="img/shreejidivine.jpeg" style="width:100%">
+        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black"
+            style="text-align: center;font-size: 22px;">
+            SHREEJI DIVINE (KHARGHAR)
+        </div>
+    </div>
+    <div class="mySlides">
+        <img src="img/bungalowlonavala.jpg" style="width:100%">
+        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black"
+            style="text-align: center;font-size: 22px;">
+            BUNGALOW (LONAVALA) (1)
+        </div>
+    </div>
+    <div class="mySlides">
+        <img src="img/bungalowlonavala1.jpg" style="width:100%">
+        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black"
+            style="text-align: center;font-size: 22px;">
+            BUNGALOW (LONAVALA) (2)
+        </div>
+    </div>
+
+    <div class="mySlides">
+        <img src="img/swc.jpg" style="width:100%">
+        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black"
+            style="text-align: center;font-size: 22px;">
+            SAI WORLD CITY (PANVEL)
+        </div>
+    </div>
+    <div class="mySlides">
+        <img src="img/swc1.jpg" style="width:100%">
+        <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black"
+            style="text-align: center;font-size: 22px;">
+            SAI WORLD CITY (PANVEL)
+        </div>
+
+        </video>
+
+    </div>
+    <button class="prev" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="next" onclick="plusDivs(1)">&#10095;</button>
+    <!-- </div> -->
+    <!-- <p id="project_head">PROJECTS</p> -->
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.4483475502398!2d73.06101171490072!3d19.044015287106312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c349749a6fb5%3A0xab9f615405214355!2sGood%20Deal%20Property!5e0!3m2!1sen!2sin!4v1643385907304!5m2!1sen!2sin"
+        width="600" height="450" style="border: 0;
+        margin-top: -46%;
+        margin-left: 82%;
+        width: auto;" allowfullscreen=""
+        loading="lazy"></iframe>
+
+    <div style="width: auto;">
+        <!-- Add font awesome icons -->
+        <a href="https://m.facebook.com/Good-Deal-Property-Dealers-1694892924067883/?ref=page_internal&mt_nav=0"
+            target="_blank" class="fa fa-facebook" style="border-radius: 30px; margin-left: 10%;"></a>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <a href="https://wa.me/message/D3AICJ2A4GJEI1" class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
+        <a href="https://twitter.com/goodealproperty" class="fa fa-twitter" target="_blank"
+            style="border-radius: 30px; margin-left: 2%;"></a>
+
+        <a href="https://www.instagram.com/gooddealpropertys/" class="fa fa-instagram" target="_blank"
+            style="border-radius: 30px; margin-left: 2%;"></a>
+        <a href="https://www.youtube.com/channel/UCxsdcYd3DRa8hTq4T_8wNCA/featured" class="fa fa-youtube"
+            target="_blank" style="border-radius: 30px; margin-left: 2%;"></a>
+        <a href="https://www.linkedin.com/in/good-deal-property-dealers-12187785/" class="fa fa-linkedin"
+            target="_blank" style="border-radius: 30px; margin-left: 2%;"></a>
+
+    </div>
+    <!-- <img src="img/building2.png" class="building" style="filter: invert(0);" alt=""> -->
+    <h1 class="build">
+        <img src="img/building.png" alt="" class="bulding" style="filter:invert(0%);">
+    </h1>
+
+
+    <div id="proprietor" class="prop">
+        <p><img src="img/prop.png" alt=""> MANISH TALREJA <img src="img/phone.png" alt=""> +91 9324535317</p>
+    </div>
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+        <!-- <i class="fas fa-arrow-up"></i> -->
+        ⬆
+    </button>
+    <br>
+    <hr>
+
+    <div class="channel">
+        <h2 style="text-align: center;" id="channel_head">CHANNEL PARTNERS</h2>
+        <hr>
+        <img src="img/paradisegroup.png" id="paradiselogo" alt=""
+            style=" width: 12%; margin-left: 8%;padding-right: 2%;">
+        <img src="img/arihantlogo.png" id="arihantlogo" alt="" style=" width: 12%;padding-right: 2%;">
+        <img src="img/lakhanis.png" id="lakhanilogo" alt="" style=" width: 9%;padding-right: 2%;">
+        <img src="img/platinumlogo.jpg" id="platinumlogo" alt="" style="width: 9;padding-right: 2%;">
+        <img src="img/emperialogo.jpeg" id="emperialogo" alt="" style="width: 12%;padding-right: 2%;">
+        <img src="img/akshar.jpg" id="aksharlogo" alt="" style="width: 12%;"><br><br><br>
+        <img src="img/dreamdigitlogo.png" id="dreamlogo" alt="" style=" width: 9%; margin-left: 12%; padding-right: 2%">
+        <img src="img/24highlogo.jpg" id="24highlogo" alt="" style="width: 9%; padding-right: 2%;">
+        <img src="img/bhagwati.jpg" id="bhagwatilogo" alt="" style="width: 9%;padding-right: 2%;">
+        <img src="img/vishwagreen.jfif" id="vishwalogo" alt="" style="width: 9%;padding-right: 2%;">
+        <img src="img/mahaavit.png" id="mahaavirlogo" alt="" style="width: 9%;padding-right: 2%;">
+        <img src="img/kamdhenu.png" id="kaamdhenulogo" alt="" style="width: 9%; padding-right: 2%;">
+        <img src="img/runwal.jpg" id="runwallogo" alt="" style="width: 9%;">
+    </div>
+    <div class="popup">
+        <button id="close">&times;</button>
+        <img src="img/logo2.png" alt="" style="width: 17%; margin-left: -85%;">
+        <h2 style="  margin-top: -23%; margin-left: 11%; font-size: 17px;">Share your details to get a call back</h2>
+        <p>
+        <form action="https://sheetdb.io/api/v1/t4zwk5a7hjp27" method="POST" id="sheetdb-form">
+            <div class="form_pop">
+                <input type="text" name="data[name]" placeholder="Enter your Name*"
+                    style="height: 23px; margin: 10px; border: 2px solid black; border-radius: 10px;" required>
+            </div>
+            <div class="form_pop">
+                <input type="text" name="data[contact]" placeholder="Enter your contact number*"
+                    style="height: 23px; margin: 10px; border: 2px solid black; border-radius: 10px;" required>
+            </div>
+            <div class="form_pop">
+                <input type="email" name="data[email]" placeholder="Enter your Email Id"
+                    style="height: 23px; margin: 10px; border: 2px solid black; border-radius: 10px;">
+            </div>
+            </p>
+            <input type="submit" value="Submit Form" class="popbtn">
+    </div>
+
+    <script>
+        var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(document.getElementById("sheetdb-form")),
+            }).then(
+                response => response.json()
+            ).then((html) => {
+                // you can put any JS code here
+                alert('Thank you, We have recieved your response.')
+            });
+        });
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+
+        let mybutton = document.getElementById("btn-back-to-top");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (
+                document.body.scrollTop > 8 ||
+                document.documentElement.scrollTop > 8
+            ) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        mybutton.addEventListener("click", backToTop);
+
+        function backToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        window.addEventListener("load", function () {
+            setTimeout(
+                function open(event) {
+                    document.querySelector(".popup").style.display = "block";
+                },
+                1000
+            )
+        });
+        document.querySelector("#close").addEventListener("click", function () {
+            document.querySelector(".popup").style.display = "none";
+        });
+
+    </script>
+</body>
+
+</html>
