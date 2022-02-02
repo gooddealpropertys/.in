@@ -150,9 +150,9 @@
         }
 
         .btn-shine {
-            position: absolute;
-            top: 20.17%;
-            left: 16%;
+            position: fixed;
+            top: 14.17%;
+            left: 11%;
             transform: translate(-50%, -50%);
             padding: 12px 48px;
             color: #fff;
@@ -548,7 +548,7 @@
             min-width: 170px;
             width: 99%;
             background-color: #39d9b8;
-            margin: 19% 0px 0px 7px;
+            margin: 6% 0px 0px 7px;
             animation: border 2s infinite;
             border-radius: 13px;
         }
@@ -648,34 +648,40 @@
                 background-repeat: no-repeat;
             }
 
-            15% {
+            14% {
                 background: url(img/officeworking.jpeg);
                 background-size: cover;
                 background-size: contain;
                 background-repeat: no-repeat;
             }
 
-            30% {
+            28% {
                 background: url(img/office.jpeg);
                 background-size: cover;
                 background-size: contain;
                 background-repeat: no-repeat;
             }
 
-            45% {
+            42% {
                 background: url(img/interview.jpeg);
                 background-size: contain;
                 background-repeat: no-repeat;
             }
 
-            60% {
+            56% {
                 background: url(img/office1.jpeg);
                 background-size: contain;
                 background-repeat: no-repeat;
             }
 
-            75% {
+            70% {
                 background: url(img/officw2.jpeg);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            84% {
+                background: url(img/interview2.jpg);
                 background-size: contain;
                 background-repeat: no-repeat;
             }
@@ -1109,7 +1115,7 @@
             width: 25%;
             height: 23%;
             left: 2%;
-            top: 23%;
+            top: 26%;
             background: rgb(93 168 183);
             cursor: pointer;
             animation: fadeIn 0.5s ease-in-out forwards;
@@ -1131,7 +1137,7 @@
             z-index: 9999;
             position: fixed;
             left: 1%;
-            top: 24.5%;
+            top: 27.5%;
         }
 
 
@@ -1172,8 +1178,8 @@
         .menu_bar li a i {
             color: #c8e7e5;
         }
-    
-        
+
+
         html {
             scroll-behavior: smooth;
         }
@@ -1228,7 +1234,17 @@
                     <a href="#channel_head">Channel Partners</a>
                 </div>
 
-
+                
+                <!-- <marquee behavior="slide" bgcolor="" direction="left" scrollamount="15" loop="1000"  style="font-size: 50px;" > -->
+                    <marquee behavior="" direction="" scrollamount="15" style="font-size: 75px;margin-top: 5%;color: #c10113;font-family: unset;">
+                        BEST PRICE DEALS 
+                    <!-- <marquee behavior="slide" direction="left" scrollamount="15" loop="1000" style="font-size: 50px;" > -->
+                        •••••••PICK-UP & DROP FACILITIES
+                        <!-- <marquee behavior="slide" direction="left" scrollamount="15" loop="1000" style="font-size: 50px;" > -->
+                        •••••••If you do a project booking / deal with us be ready to recieve a SURPRISE GIFT* from our side!</marquee>
+                
+                    
+                
                 <h2 id="about_head">ABOUT US</h2>
 
 
@@ -1552,7 +1568,9 @@
         </a> -->
         <a href="https://wa.me/message/D3AICJ2A4GJEI1" class="whatsapp-button" target="_blank"
             style="position: fixed;  left: 40px; bottom: 30px;">
-            <img src="https://i.ibb.co/VgSspjY/whatsapp-button.png" alt="whatsapp" width="220%">
+            <img src="https://i.ibb.co/VgSspjY/whatsapp-button.png" alt="whatsapp" width="220%" style="    position: fixed;
+            top: 50%;
+            width: 10%;">
         </a>
 
         <a href="https://twitter.com/goodealproperty" class="fa fa-twitter" target="_blank"
@@ -1652,24 +1670,24 @@
         <img class="slides w3-animate-fading" src="img/s7.jpg" style="width:100%">
         <img class="slides w3-animate-fading" src="img/s9.jpg" style="width:100%">
         <img class="slides w3-animate-fading" src="img/runwalproj.jpeg" style="width:100%">
-      </div>
-      
-      <script>
-      var myIndex = 0;
-      carousel();
-      
-      function carousel() {
-        var i;
-        var x = document.getElementsByClassName("slides");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";  
+    </div>
+
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("slides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 3000);
         }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}    
-        x[myIndex-1].style.display = "block";  
-        setTimeout(carousel, 3000);    
-      }
-      </script>
+    </script>
 </body>
 
 <!-- <div>
@@ -1777,7 +1795,7 @@
         </nav>
         <div class="content" style="position: fixed;
             left: 0%;
-            bottom: 75%;">
+            bottom: 71%;">
             <button class="trigger"><i class="fas fa-bars"></i></button>
         </div>
 
