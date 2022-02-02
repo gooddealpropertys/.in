@@ -10,13 +10,12 @@
     <meta name="Keywords"
         content="good deal, good deal property dealers, property, real estate, Real Estate, REAL ESTATE, Real estate, kharghar, Kharghar, KHARGHAR, Good deal, GOOD DEAL, Good deal, real estate kharghar, Real estate kharghar, agent, web, web development, html">
     <meta name="Robots" content="INDEX, FOLLOW">
-
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
     <!-- <link href="//cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" />
     <link href="//cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet" /> -->
     <title>Good Deal Property Dealers</title>
     <script src="https://kit.fontawesome.com/81c2c05f29.js" crossorigin="anonymous"></script>
 
-    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
     <style>
         *:before,
         *:after {
@@ -1077,7 +1076,7 @@
             color: #fff;
             border: 0;
             border-radius: 29px;
-            font-size: 3em;
+            font-size: 4em;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
             transition: 0.15s ease-in-out;
             cursor: pointer;
@@ -1107,7 +1106,7 @@
         /* Backgroup position and animation */
         .backdrop {
             position: fixed;
-            width: 45%;
+            width: 25%;
             height: 23%;
             left: 2%;
             top: 23%;
@@ -1131,8 +1130,8 @@
         .menu_bar ul {
             z-index: 9999;
             position: fixed;
-            left: 5%;
-            top: 25.5%;
+            left: 1%;
+            top: 24.5%;
         }
 
 
@@ -1173,7 +1172,8 @@
         .menu_bar li a i {
             color: #c8e7e5;
         }
-
+    
+        
         html {
             scroll-behavior: smooth;
         }
@@ -1643,124 +1643,155 @@
             </p>
             <input type="submit" value="SUBMIT" class="popbtn">
     </div>
+    <div class="w3-content" style="    margin-top: -150%;
+    width: 1373px;">
 
-    <!-- <div>
+        <img class="slides w3-animate-fading" src="img/s1.jpg" style="width:100%">
+        <img class="slides w3-animate-fading" src="img/s3.jpg" style="width:100%">
+        <img class="slides w3-animate-fading" src="img/s6.jpg" style="width:100%">
+        <img class="slides w3-animate-fading" src="img/s7.jpg" style="width:100%">
+        <img class="slides w3-animate-fading" src="img/s9.jpg" style="width:100%">
+        <img class="slides w3-animate-fading" src="img/runwalproj.jpeg" style="width:100%">
+      </div>
+      
+      <script>
+      var myIndex = 0;
+      carousel();
+      
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("slides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 3000);    
+      }
+      </script>
+</body>
+
+<!-- <div>
         <a class="sf-icon-telephone e-btn e-link" href="tel:9324535317">Call Us</a>
      </div> -->
-    <script>
-        var form = document.getElementById('sheetdb-form');
-        form.addEventListener("submit", e => {
-            e.preventDefault();
-            fetch(form.action, {
-                method: "POST",
-                body: new FormData(document.getElementById("sheetdb-form")),
-            }).then(
-                response => response.json()
-            ).then((html) => {
-                // you can put any JS code here
-                alert('Thank you, We have recieved your response.')
-            });
+<script>
+    var form = document.getElementById('sheetdb-form');
+    form.addEventListener("submit", e => {
+        e.preventDefault();
+        fetch(form.action, {
+            method: "POST",
+            body: new FormData(document.getElementById("sheetdb-form")),
+        }).then(
+            response => response.json()
+        ).then((html) => {
+            // you can put any JS code here
+            alert('Thank you, We have recieved your response.')
         });
+    });
 
-        var slideIndex = 1;
-        showDivs(slideIndex);
+    var slideIndex = 1;
+    showDivs(slideIndex);
 
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = x.length }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
         }
+        x[slideIndex - 1].style.display = "block";
+    }
 
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            if (n > x.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = x.length }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex - 1].style.display = "block";
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 1 ||
+            document.documentElement.scrollTop > 1
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
         }
+    }
+    // When the user clicks on the button, scroll to the top of the document
+    mybutton.addEventListener("click", backToTop);
 
-        let mybutton = document.getElementById("btn-back-to-top");
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
 
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () {
-            scrollFunction();
-        };
+    window.addEventListener("load", function () {
+        setTimeout(
+            function open(event) {
+                document.querySelector(".popup").style.display = "block";
+            },
+            1000
+        )
+    });
+    document.querySelector("#close").addEventListener("click", function () {
+        document.querySelector(".popup").style.display = "none";
+    });
 
-        function scrollFunction() {
-            if (
-                document.body.scrollTop > 1 ||
-                document.documentElement.scrollTop > 1
-            ) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-        // When the user clicks on the button, scroll to the top of the document
-        mybutton.addEventListener("click", backToTop);
+</script>
+<div class="menu_box" style="margin: 0% 0%;">
 
-        function backToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-
-        window.addEventListener("load", function () {
-            setTimeout(
-                function open(event) {
-                    document.querySelector(".popup").style.display = "block";
-                },
-                1000
-            )
-        });
-        document.querySelector("#close").addEventListener("click", function () {
-            document.querySelector(".popup").style.display = "none";
-        });
-
-    </script>
-    <div class="menu_box" style="margin: 0% 0%;">
-
-        <body>
-            <nav class="full-screen-nav">
-                <div class="backdrop"></div>
-                <div class="menu_bar">
-                    <ul>
-                        <li>
-                            <a href="#home"><i class="fas fa-home"></i> Home</a>
-                        </li>
-                        <li>
-                            <a href="#about_head"><i class="fas fa-user-alt"></i> About Us</a>
-                        </li>
-                        <li>
-                            <a href="#projects"><i class="fas fa-tasks"></i> Projects</a>
-                        </li>
-                        <li>
-                            <a href="prop.html"><i class="fas fa-tasks"></i> Available Properties</a>
-                        </li>
-                        <li>
-                            <a href="#contact_head"><i class="fas fa-at"></i> Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <div class="content" style="position: fixed;
+    <body>
+        <nav class="full-screen-nav">
+            <div class="backdrop"></div>
+            <div class="menu_bar">
+                <ul>
+                    <li>
+                        <a href="#home"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="#about_head"><i class="fas fa-user-alt"></i> About Us</a>
+                    </li>
+                    <li>
+                        <a href="#projects"><i class="fas fa-tasks"></i> Projects</a>
+                    </li>
+                    <li>
+                        <a href="prop.html"><i class="fas fa-tasks"></i>Properties</a>
+                    </li>
+                    <li>
+                        <a href="#contact_head"><i class="fas fa-at"></i> Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="https://g.page/good-deal-property?share" target="_blank"><i class="fas fa-map"></i>
+                            Locate Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="content" style="position: fixed;
             left: 0%;
             bottom: 75%;">
-                <button class="trigger"><i class="fas fa-bars"></i></button>
-            </div>
+            <button class="trigger"><i class="fas fa-bars"></i></button>
+        </div>
 
-            <script>
-                const trigger = document.querySelector(".trigger");
-                const nav = document.querySelector(".full-screen-nav");
-                const backdrop = document.querySelector(".backdrop");
+        <script>
+            const trigger = document.querySelector(".trigger");
+            const nav = document.querySelector(".full-screen-nav");
+            const backdrop = document.querySelector(".backdrop");
 
-                trigger.addEventListener("click", () => nav.classList.add("open-nav"));
-                backdrop.addEventListener("click", () => nav.classList.remove("open-nav"));
+            trigger.addEventListener("click", () => nav.classList.add("open-nav"));
+            backdrop.addEventListener("click", () => nav.classList.remove("open-nav"));
 
-            </script>
-        </body>
-    </div>
+        </script>
+    </body>
+</div>
 </body>
 
 </html>
