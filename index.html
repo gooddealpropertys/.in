@@ -10,9 +10,12 @@
     <meta name="Keywords"
         content="good deal, good deal property dealers, property, real estate, Real Estate, REAL ESTATE, Real estate, kharghar, Kharghar, KHARGHAR, Good deal, GOOD DEAL, Good deal, real estate kharghar, Real estate kharghar, agent, web, web development, html">
     <meta name="Robots" content="INDEX, FOLLOW">
+
     <!-- <link href="//cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" />
     <link href="//cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet" /> -->
     <title>Good Deal Property Dealers</title>
+    <script src="https://kit.fontawesome.com/81c2c05f29.js" crossorigin="anonymous"></script>
+
     <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
     <style>
         *:before,
@@ -111,10 +114,10 @@
         }
 
         .left img {
-    width: 90px;
-    margin-left: 1%;
-    /* filter: invert(100%); */
-}
+            width: 90px;
+            margin-left: 1%;
+            /* filter: invert(100%); */
+        }
 
 
 
@@ -149,7 +152,7 @@
 
         .btn-shine {
             position: absolute;
-            top: 19.5%;
+            top: 20.17%;
             left: 16%;
             transform: translate(-50%, -50%);
             padding: 12px 48px;
@@ -426,8 +429,8 @@
             min-height: fit-content;
             height: 300px;
             background: url(img/newbanner.jpg)
-            /* background: radial-gradient(#6c69a9, #0b1f3a); */
-            /* background-size: 300%;
+                /* background: radial-gradient(#6c69a9, #0b1f3a); */
+                /* background-size: 300%;
             background-position: 50% 50%; */
         }
 
@@ -1046,6 +1049,131 @@
             text-decoration: none;
         }
 
+        @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,900&display=swap");
+
+        /* General styles */
+
+        /* * {
+        margin: 0;
+        padding: 0;
+    } */
+
+        .menu_box body {
+            font-family: "Roboto", sans-serif;
+            background: #e8ebf7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 14px;
+            position: relative;
+        }
+
+        /* Open button */
+        .trigger {
+            background: #0d4a56;
+            outline: 0;
+            padding: 8px 15px;
+            color: #fff;
+            border: 0;
+            border-radius: 29px;
+            font-size: 3em;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+            transition: 0.15s ease-in-out;
+            cursor: pointer;
+        }
+
+        .trigger:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Nav position and opening class */
+        .full-screen-nav {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transition: 0.2s ease-in-out;
+            display: none;
+        }
+
+        .open-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Backgroup position and animation */
+        .backdrop {
+            position: fixed;
+            width: 45%;
+            height: 23%;
+            left: 2%;
+            top: 23%;
+            background: rgb(93 168 183);
+            cursor: pointer;
+            animation: fadeIn 0.5s ease-in-out forwards;
+            border-radius: 39px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* List item styling & animation */
+        .menu_bar ul {
+            z-index: 9999;
+            position: fixed;
+            left: 5%;
+            top: 25.5%;
+        }
+
+
+        .menu_bar ul li {
+            list-style: none;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: 0.25s ease-in-out animateList forwards;
+        }
+
+        .menu_bar li:last-child {
+            margin-bottom: 0;
+        }
+
+        @keyframes animateList {
+            from {
+                margin-top: -60px;
+                opacity: 0;
+            }
+
+            to {
+                margin-top: 0;
+                opacity: 1;
+            }
+        }
+
+        /* Item links styles and hover effect*/
+        .menu_bar li a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 2.5em;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: 0.15s ease-in-out;
+        }
+
+        .menu_bar li a:hover,
+        .menu_bar li a i {
+            color: #c8e7e5;
+        }
+
         html {
             scroll-behavior: smooth;
         }
@@ -1072,9 +1200,9 @@
         <div class="left" id="home">
             <div class="border">
                 <div class="inner-cutout" id="pattern">
-                <!-- <img src="img/blogo.png" alt="" style="width: 40%;"> -->
+                    <!-- <img src="img/blogo.png" alt="" style="width: 40%;"> -->
 
-                   
+
                     <!-- <div class="newlogo">
                         <img src="img/logo2.png" id="newlogo" alt="">
                     </div> -->
@@ -1102,6 +1230,7 @@
 
 
                 <h2 id="about_head">ABOUT US</h2>
+
 
 
                 <!-- <div class="ex" id="projects"> -->
@@ -1146,7 +1275,9 @@
                                                     <img src="img/logopng1.png" alt=""
                                                         style="width: 28%; filter: invert(1);">
                                                     <!-- <i class="fa fa-paper-plane" aria-hidden="true"></i> -->
-                                                    <h2 style="color: black; font-weight: 900; z-index: 0; font-size: 12px;">RESALE</h2>
+                                                    <h2
+                                                        style="color: black; font-weight: 900; z-index: 0; font-size: 12px;">
+                                                        RESALE</h2>
                                                 </div>
 
                                                 <a href="prop.html">See Properties</a>
@@ -1163,7 +1294,9 @@
                                                     <img src="img/logopng1.png" alt=""
                                                         style="width: 28%; filter: invert(1);">
 
-                                                    <h2 style="color: black; font-weight: 900; z-index: 0; font-size: 12px;">PRE-LAUNCH
+                                                    <h2
+                                                        style="color: black; font-weight: 900; z-index: 0; font-size: 12px;">
+                                                        PRE-LAUNCH
                                                     </h2>
                                                 </div>
 
@@ -1199,7 +1332,8 @@
                                                     <img src="img/logopng1.png" alt=""
                                                         style="width: 28%; filter: invert(1);">
 
-                                                    <h2 style="color: black; font-weight: 900; z-index: 0;">UNDERCONSTRUCTION</h2>
+                                                    <h2 style="color: black; font-weight: 900; z-index: 0;">
+                                                        UNDERCONSTRUCTION</h2>
                                                 </div>
                                                 <a href="prop.html">See Properties</a>
 
@@ -1420,6 +1554,7 @@
             style="position: fixed;  left: 40px; bottom: 30px;">
             <img src="https://i.ibb.co/VgSspjY/whatsapp-button.png" alt="whatsapp" width="220%">
         </a>
+
         <a href="https://twitter.com/goodealproperty" class="fa fa-twitter" target="_blank"
             style="border-radius: 30px; margin-left: 2%;"></a>
 
@@ -1438,7 +1573,8 @@
 
 
     <div id="proprietor" class="prop" style="color: #000000; padding-left: 216%;">
-        <p><img src="img/prop.png" alt=""> MANISH TALREJA <br><span style="margin-left: 20%;"> +91 9324535317 </span><br><span style="margin-left: 20%;"></span>+91 9167821222</p>
+        <p><img src="img/prop.png" alt=""> MANISH TALREJA <br><span style="margin-left: 20%;"> +91 9324535317
+            </span><br><span style="margin-left: 20%;"></span>+91 9167821222</p>
         <!-- <p style="margin-left: 5%;"></p> -->
     </div>
     <!-- Back to top button -->
@@ -1507,6 +1643,7 @@
             </p>
             <input type="submit" value="SUBMIT" class="popbtn">
     </div>
+
     <!-- <div>
         <a class="sf-icon-telephone e-btn e-link" href="tel:9324535317">Call Us</a>
      </div> -->
@@ -1581,6 +1718,49 @@
         });
 
     </script>
+    <div class="menu_box" style="margin: 0% 0%;">
+
+        <body>
+            <nav class="full-screen-nav">
+                <div class="backdrop"></div>
+                <div class="menu_bar">
+                    <ul>
+                        <li>
+                            <a href="#home"><i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li>
+                            <a href="#about_head"><i class="fas fa-user-alt"></i> About Us</a>
+                        </li>
+                        <li>
+                            <a href="#projects"><i class="fas fa-tasks"></i> Projects</a>
+                        </li>
+                        <li>
+                            <a href="prop.html"><i class="fas fa-tasks"></i> Available Properties</a>
+                        </li>
+                        <li>
+                            <a href="#contact_head"><i class="fas fa-at"></i> Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="content" style="position: fixed;
+            left: 0%;
+            bottom: 75%;">
+                <button class="trigger"><i class="fas fa-bars"></i></button>
+            </div>
+
+            <script>
+                const trigger = document.querySelector(".trigger");
+                const nav = document.querySelector(".full-screen-nav");
+                const backdrop = document.querySelector(".backdrop");
+
+                trigger.addEventListener("click", () => nav.classList.add("open-nav"));
+                backdrop.addEventListener("click", () => nav.classList.remove("open-nav"));
+
+            </script>
+        </body>
+    </div>
 </body>
 
 </html>

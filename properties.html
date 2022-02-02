@@ -5,467 +5,245 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <title>Good Deal Property Dealer</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
     body {
-        font-family: "Helvetica Neue", Helvetica, Arial;
-        font-size: 14px;
-        line-height: 20px;
-        font-weight: 400;
-        color: #3b3b3b;
-        -webkit-font-smoothing: antialiased;
-        font-smoothing: antialiased;
-        background: #2b2b2b;
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif !important;
     }
 
-    @media screen and (max-width: 580px) {
-        body {
-            font-size: 16px;
-            line-height: 22px;
-        }
-    }
-
-    .wrapper {
-        margin: 0 auto;
-        padding: 40px;
-        max-width: 800px;
-    }
-
-    .table {
-        margin: 0 0 40px 0;
+    section {
         width: 100%;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        display: table;
+        height: 100vh;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 140px 0;
     }
 
-    @media screen and (max-width: 580px) {
-        .table {
-            display: block;
-        }
+    .card {
+        position: relative;
+        max-width: 300px;
+        height: auto;
+        background: linear-gradient(-45deg, #fe0847, #feae3f);
+        border-radius: 15px;
+        margin: 30px auto;
+        padding: 40px 20px;
+        -webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, .1);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, .1);
+        -webkit-transition: .5s;
+        transition: .5s;
     }
 
-    .row {
-        display: table-row;
-        background: #f6f6f6;
+    .card:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
     }
 
-    .row:nth-of-type(odd) {
-        background: #e9e9e9;
+    .col-sm-4:nth-child(1) .card,
+    .col-sm-4:nth-child(1) .card .title .fa {
+        background: linear-gradient(-45deg, #f403d1, #64b5f6);
+
     }
 
-    .row.header1 {
-        font-weight: 900;
-        color: #ffffff;
-        background: #ea6153;
-    }
-    .row.header2 {
-        font-weight: 900;
-        color: #ffffff;
-        background: #4be787;
-    }
-    .row.header3 {
-        font-weight: 900;
-        color: #ffffff;
-        background: #ea6153;
-    }
-    .row.header4 {
-        font-weight: 900;
-        color: #ffffff;
-        background: #ea6153;
+    .col-sm-4:nth-child(2) .card,
+    .col-sm-4:nth-child(2) .card .title .fa {
+        background: linear-gradient(-45deg, #ffec61, #f321d7);
+
     }
 
-    .row.green {
-        background: #27ae60;
+    .col-sm-4:nth-child(3) .card,
+    .col-sm-4:nth-child(3) .card .title .fa {
+        background: linear-gradient(-45deg, #24ff72, #9a4eff);
+
     }
 
-    .row.blue {
-        background: #2980b9;
+    .card::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40%;
+        background: rgba(255, 255, 255, .1);
+        z-index: 1;
+        -webkit-transform: skewY(-5deg) scale(1.5);
+        transform: skewY(-5deg) scale(1.5);
     }
 
-    @media screen and (max-width: 580px) {
-        .row {
-            padding: 14px 0 7px;
-            display: block;
-        }
+    .title .fa {
+        color: #fff;
+        font-size: 60px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 100px;
+        -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
 
-        .row.header {
-            padding: 0;
-            height: 6px;
-        }
-
-        .row.header .cell {
-            display: none;
-        }
-
-        .row .cell {
-            margin-bottom: 10px;
-        }
-
-        .row .cell:before {
-            margin-bottom: 3px;
-            content: attr(data-title);
-            min-width: 98px;
-            font-size: 10px;
-            line-height: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #969696;
-            display: block;
-        }
     }
 
-    .cell {
-        padding: 6px 12px;
-        display: table-cell;
+    .title h2 {
+        position: relative;
+        margin: 20px 0 0;
+        padding: 0;
+        color: #fff;
+        font-size: 28px;
+        z-index: 2;
     }
 
-    @media screen and (max-width: 580px) {
-        .cell {
-            padding: 2px 16px;
-            display: block;
-        }
+    .price,
+    .option {
+        position: relative;
+        z-index: 2;
+    }
+
+    .price h4 {
+        margin: 0;
+        padding: 20px 0;
+        color: #fff;
+        font-size: 30px;
+    }
+
+    .option ul {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .option ul li {
+        margin: 0 0 10px;
+        padding: 0;
+        list-style: none;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .card a {
+        position: relative;
+        z-index: 2;
+        background: #fff;
+        color: black;
+        width: 150px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 40px;
+        display: block;
+        text-align: center;
+        margin: 20px auto 0;
+        font-size: 16px;
+        cursor: pointer;
+        -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+
+    }
+
+    .card a:hover {
+        text-decoration: none;
+    }
+
+
+    
+
+    html {
+        scroll-behavior: smooth;
     }
 </style>
 
 <body>
+    <section>
+        <div class="container-fluid" style="  margin-top: -5%;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card text-center">
+                            <div class="title">
+                                <!-- <img src="img/logopng1.png" alt="" style="width: 28%; filter: invert(1);"> -->
+                                <!-- <i class="fa fa-paper-plane" aria-hidden="true"></i> -->
+                                <h2 style="color: black; font-weight: 900;">SALE</h2>
+                            </div>
+                            <!-- <div class="price">
+                                <h4>Residential & Commercial</h4>
+                            </div>
+                            <div class="option">
+                                <ul>
+                                    <li> <i class="fa fa-check" aria-hidden="true"></i> Shops </li>
+                                    <li> <i class="fa fa-check" aria-hidden="true"></i> Flats </li>
+                                    <li> <i class="fa fa-check" aria-hidden="true"></i> Row House </li>
+                                    <li> <i class="fa fa-check" aria-hidden="true"></i> Plots </li>
+                                </ul>
+                            </div>
+                            <a href="sale.html">See Properties</a> -->
+                        </div>
+                    </div>
+                    <!-- END Col one -->
+                    <!-- ==================================================================================================== -->
+                    <div class="col-sm-4">
+                        <div class="card text-center">
+                            <div class="title">
+                                <!-- <i class="fa fa-plane" aria-hidden="true"></i> -->
+                                <!-- <img src="img/logopng1.png" alt="" style="width: 28%; filter: invert(1);"> -->
 
-    <div class="wrapper">
-        <h2 style="color: #ea6153;"> FLATS AVAILABLE ON RENT</h2>
-        <div class="table">
+                                <h2 style="color: black; font-weight: 900;">PURCHASE</h2>
+                            </div>
+                            <!-- <div class="price">
+                                <h4>Residential & Commercial</h4>
+                            </div>
+                            <div class="option">
+                                <ul>
+                                    <li> <i class="fa fa-check" aria-hidden="true"></i> Shops </li>
+                                    <li> <i class="fa fa-check" aria-hidden="true"></i> Flats </li>
+                                    <li> <i class="fa fa-check" aria-hidden="true"></i> Row House </li>
+                                    <li> <i class="fa fa-check" aria-hidden="true"></i> Plots </li>
+                                </ul>
+                            </div>
+                            <a href="purchase.html">See Properties</a> -->
+                        </div>
+                    </div>
+                    <!-- END Col two -->
+                    <!-- ==================================================================================================== -->
 
-            <div class="row header1">
-                <div class="cell">
-                    Residency Name
-                </div>
-                <div class="cell">
-                    Area
-                </div>
-                <div class="cell">
-                    Locality
-                </div>
-                <div class="cell">
-                    FLat Type
+                    <div class="col-sm-4">
+                        <div class="card text-center">
+                            <div class="title">
+                                <!-- <i class="fa fa-rocket" aria-hidden="true"></i> -->
+                                <!-- <img src="img/logopng1.png" alt="" style="width: 28%; filter: invert(1);"> -->
+
+                                <h2 style="color: black; font-weight: 900;">RENT</h2>
+                            </div>
+                            <!-- <div class="price">
+                                <h4>Residential & Commercial</h4>
+                            </div> -->
+                            <!-- <div class="option">
+                                <ul>
+                                    <li> <i class="fa fa-check" aria-hidden="true"></i> Shops </li>
+                                    <li> <i class="fa fa-check" aria-hidden="true"></i> Flats </li>
+                                    <li> <i class="fa fa-check" aria-hidden="true"></i> Bungalows </li>
+                                    <li> <i class="fa fa-times" aria-hidden="false" style="color: red;"></i> Plots </li>
+                                </ul>
+                            </div>
+                            <a href="rent.html">See Properties</a> -->
+
+                        </div>
+                    </div>
+                    <!-- END Col three -->
+                    <!-- ==================================================================================================== -->
+
                 </div>
             </div>
-
-            <div class="row">
-                <div class="cell" data-title="Name">
-                    Regency Crest
-                </div>
-                <div class="cell" data-title="Age">
-                    25
-                </div>
-                <div class="cell" data-title="Locality">
-                    Kharghar (Sector-19)
-                </div>
-                <div class="cell" data-title="Flat Type">
-                    2 BHK
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="cell" data-title="Name">
-                   Mahi Kripa
-                </div>
-                <div class="cell" data-title="Age">
-                    25
-                </div>
-                <div class="cell" data-title="Locality">
-                    Kharghar (Sector-27)
-                </div>
-                <div class="cell" data-title="Flat Type">
-                    1 BHK
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="cell" data-title="Name">
-                   Shah Arcade
-                </div>
-                <div class="cell" data-title="Age">
-                    25
-                </div>
-                <div class="cell" data-title="Locality">
-                    Kharghar (Sector-6)
-                </div>
-                <div class="cell" data-title="Flat Type">
-                    1 & 2 BHK
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="cell" data-title="Name">
-                    Regency Gardem
-                </div>
-                <div class="cell" data-title="Age">
-                    25
-                </div>
-                <div class="cell" data-title="Locality">
-                    Kharghar (Sector-6)
-                </div>
-                <div class="cell" data-title="Flat Type">
-                    2 & 3 BHK
-                </div>
-            </div>
-
         </div>
-
-        <!-- --------------------------------------------------------------------------------------------- -->
-        <!-- FlATS SELL -->
-        <div class="table">
-
-            <h2 style="color:#27ae60;"> FLATS AVAILABLE FOR SALE</h2>
-            <div class="table">
-
-                <div class="row header2">
-                    <div class="cell">
-                        Residency Name
-                    </div>
-                    <div class="cell">
-                        Area
-                    </div>
-                    <div class="cell">
-                        Locality
-                    </div>
-                    <div class="cell">
-                        FLat Type
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="cell" data-title="Name">
-                        Regency Crest
-                    </div>
-                    <div class="cell" data-title="Age">
-                        25
-                    </div>
-                    <div class="cell" data-title="Locality">
-                        Kharghar (Sector-19)
-                    </div>
-                    <div class="cell" data-title="Flat Type">
-                        2 BHK
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="cell" data-title="Name">
-                        Regency Crest
-                    </div>
-                    <div class="cell" data-title="Age">
-                        25
-                    </div>
-                    <div class="cell" data-title="Locality">
-                        Kharghar (Sector-19)
-                    </div>
-                    <div class="cell" data-title="Flat Type">
-                        2 BHK
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="cell" data-title="Name">
-                        Regency Crest
-                    </div>
-                    <div class="cell" data-title="Age">
-                        25
-                    </div>
-                    <div class="cell" data-title="Locality">
-                        Kharghar (Sector-19)
-                    </div>
-                    <div class="cell" data-title="Flat Type">
-                        2 BHK
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="cell" data-title="Name">
-                        Regency Crest
-                    </div>
-                    <div class="cell" data-title="Age">
-                        25
-                    </div>
-                    <div class="cell" data-title="Locality">
-                        Kharghar (Sector-19)
-                    </div>
-                    <div class="cell" data-title="Flat Type">
-                        2 BHK
-                    </div>
-                </div>
-
-            </div>
-            <!-- --------------------------------------------------------------------------------------------- -->
-
-            <div class="table">
-
-                <h2 style="color:#2980b9;"> SHOPS AVAILABLE ON RENT</h2>
-                <div class="table">
-
-                    <div class="row header3">
-                        <div class="cell">
-                            Residency Name
-                        </div>
-                        <div class="cell">
-                            Area
-                        </div>
-                        <div class="cell">
-                            Locality
-                        </div>
-                        <div class="cell">
-                            FLat Type
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="cell" data-title="Name">
-                            Regency Crest
-                        </div>
-                        <div class="cell" data-title="Age">
-                            25
-                        </div>
-                        <div class="cell" data-title="Locality">
-                            Kharghar (Sector-19)
-                        </div>
-                        <div class="cell" data-title="Flat Type">
-                            2 BHK
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="cell" data-title="Name">
-                            Regency Crest
-                        </div>
-                        <div class="cell" data-title="Age">
-                            25
-                        </div>
-                        <div class="cell" data-title="Locality">
-                            Kharghar (Sector-19)
-                        </div>
-                        <div class="cell" data-title="Flat Type">
-                            2 BHK
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="cell" data-title="Name">
-                            Regency Crest
-                        </div>
-                        <div class="cell" data-title="Age">
-                            25
-                        </div>
-                        <div class="cell" data-title="Locality">
-                            Kharghar (Sector-19)
-                        </div>
-                        <div class="cell" data-title="Flat Type">
-                            2 BHK
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="cell" data-title="Name">
-                            Regency Crest
-                        </div>
-                        <div class="cell" data-title="Age">
-                            25
-                        </div>
-                        <div class="cell" data-title="Locality">
-                            Kharghar (Sector-19)
-                        </div>
-                        <div class="cell" data-title="Flat Type">
-                            2 BHK
-                        </div>
-                    </div>
-
-                </div>
-                <!-- --------------------------------------------------------------------------------------------- -->
-
-                <div class="table">
-
-                    <h2 style="color:#ea6153;"> FLATS AVAILABLE ON RENT</h2>
-                    <div class="table">
-
-                        <div class="row header4">
-                            <div class="cell">
-                                Residency Name
-                            </div>
-                            <div class="cell">
-                                Area
-                            </div>
-                            <div class="cell">
-                                Locality
-                            </div>
-                            <div class="cell">
-                                FLat Type
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="cell" data-title="Name">
-                                Regency Crest
-                            </div>
-                            <div class="cell" data-title="Age">
-                                25
-                            </div>
-                            <div class="cell" data-title="Locality">
-                                Kharghar (Sector-19)
-                            </div>
-                            <div class="cell" data-title="Flat Type">
-                                2 BHK
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="cell" data-title="Name">
-                                Regency Crest
-                            </div>
-                            <div class="cell" data-title="Age">
-                                25
-                            </div>
-                            <div class="cell" data-title="Locality">
-                                Kharghar (Sector-19)
-                            </div>
-                            <div class="cell" data-title="Flat Type">
-                                2 BHK
-                            </div>
-                        </div>
-        
-                        <div class="row">
-                            <div class="cell" data-title="Name">
-                                Regency Crest
-                            </div>
-                            <div class="cell" data-title="Age">
-                                25
-                            </div>
-                            <div class="cell" data-title="Locality">
-                                Kharghar (Sector-19)
-                            </div>
-                            <div class="cell" data-title="Flat Type">
-                                2 BHK
-                            </div>
-                        </div>
-        
-                        <div class="row">
-                            <div class="cell" data-title="Name">
-                                Regency Crest
-                            </div>
-                            <div class="cell" data-title="Age">
-                                25
-                            </div>
-                            <div class="cell" data-title="Locality">
-                                Kharghar (Sector-19)
-                            </div>
-                            <div class="cell" data-title="Flat Type">
-                                2 BHK
-                            </div>
-                        </div>
-        
-
-   
-
-
+    </section>
+    <!-- ==================================================================================================== -->
+    
 </body>
 
 </html>
