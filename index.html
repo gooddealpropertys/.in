@@ -10,9 +10,9 @@
     <meta name="Keywords"
         content="good deal, good deal property dealers, property, real estate, Real Estate, REAL ESTATE, Real estate, kharghar, Kharghar, KHARGHAR, Good deal, GOOD DEAL, Good deal, real estate kharghar, Real estate kharghar, agent, web, web development, html">
     <meta name="Robots" content="INDEX, FOLLOW">
-    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
-    <!-- <link href="//cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" />
-    <link href="//cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" />
+    <link href="//cdn.syncfusion.com/ej2/ej2-buttons/styles/material.css" rel="stylesheet" />
     <title>Good Deal Property Dealers</title>
     <script src="https://kit.fontawesome.com/81c2c05f29.js" crossorigin="anonymous"></script>
 
@@ -1178,6 +1178,19 @@
             color: #c8e7e5;
         }
 
+        .e-btn.e-link,
+        .e-css.e-btn.e-link {
+            background-color: #68f1d5;
+            border-color: black;
+            border-radius: 66%;
+            box-shadow: none;
+            position: fixed;
+            left: 2.5%;
+            top: 76%;
+            z-index: 200;
+            color: #d91111;
+            transform: scaleX(-1);
+        }
 
         html {
             scroll-behavior: smooth;
@@ -1197,7 +1210,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
 
 <body>
-
 
     <header class="header" style="width: fit-content;"> <a id="button"></a>
         <div class="btn-shine" target="_blank">MAHA RERA No.: A52000000368</div>
@@ -1233,17 +1245,20 @@
                     <a href="#channel_head">Channel Partners</a>
                 </div>
 
-                
+
                 <!-- <marquee behavior="slide" bgcolor="" direction="left" scrollamount="15" loop="1000"  style="font-size: 50px;" > -->
-                    <marquee behavior="" direction="" scrollamount="15" style="font-size: 75px;margin-top: 5%;color: #c10113;font-family: unset;">
-                        BEST PRICE DEALS 
+                <marquee behavior="" direction="" scrollamount="15"
+                    style="font-size: 75px;margin-top: 5%;color: #c10113;font-family: unset;">
+                    BEST PRICE DEALS
                     <!-- <marquee behavior="slide" direction="left" scrollamount="15" loop="1000" style="font-size: 50px;" > -->
-                        •••••••PICK-UP & DROP FACILITIES
-                        <!-- <marquee behavior="slide" direction="left" scrollamount="15" loop="1000" style="font-size: 50px;" > -->
-                        •••••••With a gratitude from our part, you will receive an ADDITIONAL BENEFIT* as a token of appreciation.!</marquee>
-                
-                    
-                
+                    •••••••PICK-UP & DROP FACILITIES
+                    <!-- <marquee behavior="slide" direction="left" scrollamount="15" loop="1000" style="font-size: 50px;" > -->
+                    •••••••With a gratitude from our part, you will receive an ADDITIONAL BENEFIT* as a token of
+                    appreciation.!
+                </marquee>
+
+
+
                 <h2 id="about_head">ABOUT US</h2>
 
 
@@ -1360,7 +1375,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </section>                       
+                        </section>
                     </div>
                 </div>
     </header>
@@ -1657,7 +1672,13 @@
         <img class="slides w3-animate-fading" src="img/s9.jpg" style="width:100%">
         <img class="slides w3-animate-fading" src="img/runwalproj.jpeg" style="width:100%">
     </div>
-
+    <div>
+        <a class="e-btn e-link" href="tel:9324535317">
+            <i style="    font-size: 88px;
+            width: 30px;
+            margin-left: -70%;" class="fa">&#xf095;</i>
+        </a>
+    </div>
     <script>
         var myIndex = 0;
         carousel();
