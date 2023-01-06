@@ -161,3 +161,22 @@ jQuery(document).ready(function ($) {
 	});
   });
   
+$(function() {
+      // CLOSE AND REMOVE ON ESC
+      $(document).on('keyup',function(e) {
+        if (e.keyCode == 27) {
+          $('.overlay').remove();
+        }
+      });
+      
+      // CLOSE AND REMOVE ON CLICK
+      $('body').on('click','.overlay, .close', function() {
+        $('.overlay').remove();
+      });
+      
+      // SO PLAYING WITH THE VIDEO CONTROLS DOES NOT
+      // CLOSE THE POPUP
+      $('body').on('click','.videoBox', function(e) {
+        e.stopPropagation();
+      });
+    });
