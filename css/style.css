@@ -2260,6 +2260,7 @@ html{
       top: 0;
       bottom: 0;
       right: 0;
+      z-index: 9;
     }
     .videoBox {
       position: fixed;
@@ -2271,6 +2272,8 @@ html{
       background: #fff;
       text-align: center;
       border-radius: 5px;
+      background: #e8a624;
+      color: black;
     }
     .videoBox video {
       width: 80%;
