@@ -2282,7 +2282,7 @@ html{
       top: 0px;
       right: 0px;
       display: block;
-      background: transparent url(close.png) no-repeat center center;
+      background: transparent url(./img/close.png) no-repeat center center;
       opacity: .5;
     }
     .close:hover {
