@@ -3,7 +3,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #161418;
+    background-color: #fff6dd;
     color: #eee;
     user-select: none;
   }
@@ -20,9 +20,9 @@ body {
     user-select: none;
     max-width: 300px;
     margin: 5rem auto;
-    border: 1px solid #ffffff22;
+    border: 1px solid #eed183;
     background-color: #282c34;
-    background: linear-gradient(0deg, #282c34 0%, rgba(17, 0, 32, 0.5) 100%);
+    background: linear-gradient(0deg, #362c00 0%, #eed183 100%);
     box-shadow: 0 7px 20px 5px #00000088;
     border-radius: 0.7rem;
     backdrop-filter: blur(7px);
@@ -53,7 +53,7 @@ body {
   }
   .nft .main .description {
     margin: 0.5rem 0;
-    color: #a89ec9;
+    color: #eed183;
   }
   .nft .main .tokenInfo {
     display: flex;
@@ -63,7 +63,7 @@ body {
   .nft .main .tokenInfo .price {
     display: flex;
     align-items: center;
-    color: #ee83e5;
+    color: #eed183;
     font-weight: 700;
   }
   .nft .main .tokenInfo .price ins {
@@ -73,7 +73,7 @@ body {
   .nft .main .tokenInfo .duration {
     display: flex;
     align-items: center;
-    color: #a89ec9;
+    color: #eed183;
     margin-right: 0.2rem;
   }
   .nft .main .tokenInfo .duration ins {
@@ -87,7 +87,7 @@ body {
     margin-bottom: -0.3rem;
   }
   .nft .main .creator ins {
-    color: #a89ec9;
+    color: #eed183;
     text-decoration: none;
   }
   .nft .main .creator .wrapper {
@@ -135,8 +135,9 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+  } 
   .bg h1 {
     font-size: 10rem;
     filter: opacity(0.5);
+    color: #595959;
   }
